@@ -84,7 +84,7 @@ const { Server } = require("socket.io");
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: true,
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   },
 });
@@ -139,7 +139,7 @@ app.use(session(sessionOptions));
 app.use(express.json());
 app.use(
   cors({
-    origin: true,
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
