@@ -29,7 +29,7 @@ function Login() {
         password: formState.password === "",
       });
     }
-    const res = await fetch(" https://getmyseatbackend.onrender.com/api/login", {
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

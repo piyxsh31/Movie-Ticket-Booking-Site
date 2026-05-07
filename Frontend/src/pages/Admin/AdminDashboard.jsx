@@ -26,7 +26,7 @@ const AdminDashboard = () => {
         
       const fetchShows = async () => {
         try {
-          const response = await fetch(`https://getmyseatbackend.onrender.com/api/show/${city}`, {
+          const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/show/${city}`, {
             credentials: "include",
           });
           if (!response.ok) {

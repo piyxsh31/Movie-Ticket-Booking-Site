@@ -16,7 +16,7 @@ function MoviePage() {
     const fetchAllMovies = async () => {
       try {
         const movieData = await fetch(
-          ` https://getmyseatbackend.onrender.com/api/movies/${title}`,
+          ` ${import.meta.env.VITE_SERVER_URL}/api/movies/${title}`,
           { credentials: "include" }
         );
         const detailedMovies = await movieData.json();
@@ -24,7 +24,7 @@ function MoviePage() {
           throw new Error(detailedMovies.message || "Failed to fetch movie data");
         }
         const reviewsData = await fetch(
-          `https://getmyseatbackend.onrender.com/api/reviews/${detailedMovies[0]._id}`,
+          `${import.meta.env.VITE_SERVER_URL}/api/reviews/${detailedMovies[0]._id}`,
           { credentials: "include" })
         
         const detailedReviews = await reviewsData.json();

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 const createOrder = async (amount) => {
-  const response = await fetch("https://getmyseatbackend.onrender.com/api/create-order", {
+  const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/create-order`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

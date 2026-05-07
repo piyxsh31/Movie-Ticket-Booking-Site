@@ -24,7 +24,7 @@ export default function ReviewsAndRatingsSection({ info , reviews , setReviews})
           user : user._id,
           movie : info._id,
         };
-        const newReviewData = await fetch("https://getmyseatbackend.onrender.com/api/reviews", {
+        const newReviewData = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/reviews`, {
           method: "POST",
           credentials:"include",
           headers: {

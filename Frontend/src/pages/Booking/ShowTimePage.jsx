@@ -48,8 +48,9 @@ function ShowTimePage() {
   useEffect(() => {
     const fetchShowData = async () => {
       try {
+        console.log(city, title, liveInfo.date);
         const theatreData = await fetch(
-          `https://getmyseatbackend.onrender.com/api/shows/${city}/${title}/${liveInfo.date}`
+          `${import.meta.env.VITE_SERVER_URL}/api/shows/${city}/${title}/${liveInfo.date}`
         );
         const theatres = await theatreData.json();
         if (!theatreData.ok) {
@@ -112,7 +113,7 @@ function ShowTimePage() {
     const fetchMovieData = async () => {
       try {
         const movieData = await fetch(
-          ` https://getmyseatbackend.onrender.com/api/movies/${title}`
+          ` ${import.meta.env.VITE_SERVER_URL}/api/movies/${title}`
         );
         const detailedMovie = await movieData.json();
         if (!movieData.ok) {

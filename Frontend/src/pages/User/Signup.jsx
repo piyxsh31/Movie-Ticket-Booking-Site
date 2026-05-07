@@ -43,7 +43,7 @@ function Signup() {
         password: formState.password === "",
       });
     }
-    const res = await fetch(" https://getmyseatbackend.onrender.com/api/signup", {
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

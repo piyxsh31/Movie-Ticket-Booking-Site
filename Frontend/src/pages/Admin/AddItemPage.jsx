@@ -81,7 +81,7 @@ const handleSubmit = async (e) => {
   };
 
   try {
-    const res = await fetch("https://getmyseatbackend.onrender.com/api/shows", {
+    const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/shows`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
 useEffect(() => {
     const getTheatres = async () => {
       try {
-        const res = await fetch(`https://getmyseatbackend.onrender.com/api/theatres/${city}`, {
+        const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/theatres/${city}`, {
           credentials: "include"
         });
         const data = await res.json();
@@ -134,7 +134,7 @@ useEffect(() => {
   useEffect(() => {
     const getMovies = async () => {
       try {
-        const res = await fetch("https://getmyseatbackend.onrender.com/api/movies", {
+        const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/movies`, {
           credentials: "include"
         });
         const data = await res.json();

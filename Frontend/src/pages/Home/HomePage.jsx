@@ -19,7 +19,7 @@ function HomePage() {
     const fetchAllMovies = async () => {
       try {
         const popularMoviesData = await fetch(
-          ` https://getmyseatbackend.onrender.com/api/movies/${city}/popular`,
+          ` ${import.meta.env.VITE_SERVER_URL}/api/movies/${city}/popular`,
           { credentials: "include" }
         );
         const detailedPopularMovies = await popularMoviesData.json();
@@ -31,7 +31,7 @@ function HomePage() {
         setPopularMovies(detailedPopularMovies);
 
         const topRatedData = await fetch(
-          ` https://getmyseatbackend.onrender.com/api/movies/${city}/toprated`,
+          ` ${import.meta.env.VITE_SERVER_URL}/api/movies/${city}/toprated`,
           { credentials: "include" }
         );
         const detailedTopRated = await topRatedData.json();
@@ -43,7 +43,7 @@ function HomePage() {
         setTopRatedMovies(detailedTopRated);
 
         const nowPlayingData = await fetch(
-          ` https://getmyseatbackend.onrender.com/api/movies/${city}/nowplaying`,
+          ` ${import.meta.env.VITE_SERVER_URL}/api/movies/${city}/nowplaying`,
           { credentials: "include" }
         );
         const detailedNowPlaying = await nowPlayingData.json();
@@ -55,7 +55,7 @@ function HomePage() {
         setNowPlayingMovies(detailedNowPlaying);
 
         const upcomingData = await fetch(
-          ` https://getmyseatbackend.onrender.com/api/movies/upcoming`,
+          ` ${import.meta.env.VITE_SERVER_URL}/api/movies/upcoming`,
           { credentials: "include" }
         );
         const detailedUpcoming = await upcomingData.json();
